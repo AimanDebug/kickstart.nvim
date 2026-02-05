@@ -709,6 +709,10 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        vue = { 'prettier' },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
+
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
