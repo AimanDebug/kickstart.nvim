@@ -596,7 +596,8 @@ require('lazy').setup({
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --  See `:help lsp-config` for information about keys and how to configure
       local servers = {
-        -- clangd = {},
+        clangd = {},
+
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -606,6 +607,7 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
+        checkmake = {},
       }
 
       -- Ensure the servers and tools above are installed
