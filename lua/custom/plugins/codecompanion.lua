@@ -35,6 +35,14 @@ return {
         },
       },
     },
+    prompt_library = {
+      markdown = {
+        dirs = {
+          vim.fn.stdpath 'config' .. '/lua/custom/plugins/prompts',
+        },
+      },
+    },
+    display = { action_palette = { opts = { show_preset_prompts = false } } },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
