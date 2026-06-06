@@ -99,9 +99,16 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.o.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+-- Show relative line numbers when in insert mode, and absolute line numbers otherwise.
+vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+  callback = function() vim.o.relativenumber = true end,
+  desc = 'Show relative line numbers in insert mode',
+})
+
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+  callback = function() vim.o.relativenumber = false end,
+  desc = 'Show absolute line numbers outside of insert mode',
+})
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
