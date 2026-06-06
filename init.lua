@@ -110,6 +110,11 @@ vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
   desc = 'Show absolute line numbers outside of insert mode',
 })
 
+-- Tab and indentation settings
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
@@ -950,6 +955,3 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- Custom
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
