@@ -97,16 +97,18 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Make line numbers default
+-- Make relative line numbers default with absolute line number on the current line.
 vim.o.number = true
--- Show relative line numbers when in insert mode, and absolute line numbers otherwise.
+vim.o.relativenumber = true
+
+-- Show relative line numbers when in non-insert mode, and absolute line numbers otherwise.
 vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
-  callback = function() vim.o.relativenumber = true end,
+  callback = function() vim.o.relativenumber = false end,
   desc = 'Show relative line numbers in insert mode',
 })
 
 vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
-  callback = function() vim.o.relativenumber = false end,
+  callback = function() vim.o.relativenumber = true end,
   desc = 'Show absolute line numbers outside of insert mode',
 })
 
